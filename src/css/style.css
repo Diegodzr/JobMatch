@@ -1,0 +1,39 @@
+/* paleta de colores
+Primario: #F6A87A (naranja pastel)
+Secundario: #FFD8A9 (durazno claro)
+Complementario: #6C63FF (violeta pastel)
+Neutros: #F4F4F4 (gris claro), #4A4A4A (gris oscuro)
+*/
+
+#divInicial{
+    background-image: url(../img/imgPrincipal.png); /* Imagen para el div*/
+}
+
+#navPrincipal{
+    background-color: #FFD8A9; /* color principal para div*/
+}
+
+body{
+   background: linear-gradient(135deg, #f6a87a, #f8d49d);  /* fondo en degradado*/
+}
+
+#trabajos{
+    display: flex;
+    flex-direction: row;    /*direccion de las ofertas laborales*/
+}
+
+.boton{
+    background-color: #ffddcd;
+    color: #000000;
+    border-radius: 10%;
+    text-align: center;
+}
+
+#logoNav{
+    background-color: #d38e65 ;
+    border-radius: 8%;
+}
+
+#reservado{
+    background-color: rgba(0, 0, 0, 0.2)
+}

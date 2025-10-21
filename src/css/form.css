@@ -1,0 +1,70 @@
+#containerForm {
+    background-image: url("../img/fondoForm.png");
+    background-size: cover;       /* la imagen ocupa todo el div */
+    background-position: center;  /* centrada */
+    background-repeat: repeat; /* no se repite */
+    display: flex;
+    align-items: flex-start;          /* centra verticalmente el texto */
+    justify-content: center;       /* texto al centro */
+    height: 50%;
+    width: 100%;    
+}
+
+#formulario {
+    width: 50vh;
+    display: flex;
+}
+
+.card{
+    width: 10vh;
+    padding: 3vh;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #F6A87A 0%, #FFB675 50%, #FFD8A9 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5vh;
+    opacity: 90%;
+}
+
+
+.card input, .card textarea, .card select { /* multi selector*/
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #FFD8A9, #FFBE93);
+    align-items: center;
+}
+
+.error {
+    font-size: 15px;
+    color: rgb(128, 0, 0); /*error que mostrara js*/
+    display: block;
+    height: 0.5vh;
+}
+
+#agradecimiento{
+    display: none; /*oculta el div para mostrarlo con js despues*/
+}
+
+.card-agradecimiento { 
+    width: 60%;
+    padding: 3%;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #F6A87A 0%, #FFB675 50%, #FFD8A9 100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 0.8s ease forwards; /*animacion al mostar la card de agradecimiento*/
+    margin: 5vh;
+}
+
+.error-mensaje {
+  color: #d9534f; /* Un color rojo para la alerta */
+  font-size: 0.875em;
+  display: block; /* Para que aparezca en una nueva línea */
+  margin-top: 5px;
+}

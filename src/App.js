@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// 1. Importa los componentes necesarios de React Router
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// 2. Importa tus componentes: el Nav y las páginas
+import Nav from './components/Nav'; // Asegúrate que la ruta sea correcta
+import Principal from './pages/Principal';
+import PaginaTrabajos from './pages/PaginaTrabajos';
+import Formulario from './pages/Formulario';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // 3. Envuelve toda tu aplicación con BrowserRouter
+    <BrowserRouter>
+      {/* El Nav va aquí, fuera de <Routes>, para que aparezca en todas las páginas */}
+      <Nav />
+      
+      {/* 4. Define las rutas de tu aplicación */}
+      <Routes>
+        <Route path="/" element={<Principal />} />
+        <Route path="/trabajos" element={<PaginaTrabajos />} />
+        <Route path="/formulario" element={<Formulario />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

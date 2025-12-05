@@ -1,0 +1,36 @@
+/* src/css/Login.css */
+.login-container {
+    min-height: 80vh; /* Ocupa casi toda la altura de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa; /* Fondo gris muy suave */
+}
+
+.card-login {
+    border: none;
+    width: 60vh;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    background-color: white;
+}
+
+.btn-orange {
+    background-color: #ff9f43; /* Naranja JobMatch */
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-orange:hover {
+    background-color: #ff7f00; /* Naranja más oscuro al pasar el mouse */
+    color: white;
+}
+
+.login-header {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}

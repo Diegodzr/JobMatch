@@ -7,6 +7,8 @@ import Nav from './components/Nav'; // Asegúrate que la ruta sea correcta
 import Principal from './pages/Principal';
 import PaginaTrabajos from './pages/PaginaTrabajos';
 import Formulario from './pages/Formulario';
+import Login from './pages/Login';
+import Registro from './components/Registro';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/" element={<Principal />} />
         <Route path="/trabajos" element={<PaginaTrabajos />} />
         <Route path="/formulario" element={<Formulario />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
       </Routes>
     </BrowserRouter>
   );

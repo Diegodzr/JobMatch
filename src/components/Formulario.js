@@ -55,11 +55,12 @@ const FormularioEmpresa = () => {
     setErrors({ ...errors, [name]: error });
   };
 
-  // MANEJADOR DEL ENVÍO DEL FORMULARIO
-  const handleSubmit = (e) => {
+
+// MANEJADOR DEL ENVÍO DEL FORMULARIO
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     
-    // Validar todos los campos antes de enviar
+    // 1. Validar campos 
     const newErrors = {};
     Object.keys(formData).forEach(key => {
         const error = validateField(key, formData[key]);
@@ -70,12 +71,36 @@ const FormularioEmpresa = () => {
 
     setErrors(newErrors);
 
-    // Si el objeto de errores está vacío, el formulario es válido
+    // 2. Si no hay errores de validación, enviamos al Backend
     if (Object.keys(newErrors).length === 0) {
-      console.log("Formulario enviado:", formData);
-      setSubmitted(true); // Muestra el mensaje de agradecimiento
+      
+      try {
+        // Hacemos la petición POST
+        const response = await fetch('http://localhost:8080/api/empresas', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData), // Convertimos los datos a JSON
+        });
+
+        if (response.ok) {
+          // Si el servidor responde OK (200)
+          console.log("¡Datos guardados en MySQL!");
+          setSubmitted(true); // Mostramos el mensaje de agradecimiento
+        } else {
+          // Si hubo un error en el servidor
+          console.error("Error al guardar en el servidor");
+          alert("Hubo un problema al conectar con el servidor.");
+        }
+
+      } catch (error) {
+        console.error("Error de conexión:", error);
+        alert("No se pudo conectar con el Backend. Asegúrate de que Spring Boot esté corriendo.");
+      }
+
     } else {
-      console.log("El formulario contiene errores.");
+      console.log("El formulario contiene errores de validación.");
     }
   };
 
